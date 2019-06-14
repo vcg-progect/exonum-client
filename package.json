@@ -2,7 +2,7 @@
   "name": "exonum-client",
   "version": "0.16.9",
   "description": "Light Client for Exonum Blockchain",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
   "engines": {
     "node": ">=4"
   },
