@@ -106,10 +106,12 @@ class Transaction extends Message {
    * @param {string} secretKey
    * @param {number} attempts
    * @param {number} timeout
+   * @param {Object} body
+   * @param {Object} headers
    * @returns {Promise}
    */
-  send (explorerBasePath, data, secretKey, attempts, timeout) {
-    return send(explorerBasePath, this, data, secretKey, attempts, timeout)
+  send (explorerBasePath, data, secretKey, attempts, timeout, body, headers) {
+    return send(explorerBasePath, this, data, secretKey, attempts, timeout, body, headers)
   }
 }
 
