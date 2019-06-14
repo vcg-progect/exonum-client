@@ -16,9 +16,11 @@ const ATTEMPT_TIMEOUT = 500
  * @param {string} secretKey
  * @param {number} attempts
  * @param {number} timeout
+ * @param {Object} body
+ * @param {Object} headers
  * @return {Promise}
  */
-export function send (explorerBasePath, type, data, secretKey, attempts, timeout, headers) {
+export function send (explorerBasePath, type, data, secretKey, attempts, timeout, body, headers) {
   if (typeof explorerBasePath !== 'string') {
     throw new TypeError('Explorer base path endpoint of wrong data type is passed. String is required.')
   }
@@ -60,10 +62,10 @@ export function send (explorerBasePath, type, data, secretKey, attempts, timeout
 
   // get transaction hash
   const txHash = hash(buffer)
+  // expand request body
+  const requestBody = Object.assign(body, { tx_body: txBody })
 
-  return axios.post(`${explorerBasePath}`, {
-    tx_body: txBody
-  }, headers).then(() => {
+  return axios.post(`${explorerBasePath}`, requestBody, headers).then(() => {
     if (attempts === 0) {
       return txHash
     }
