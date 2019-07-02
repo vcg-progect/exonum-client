@@ -16,3 +16,4 @@ dist
 lib
 /proto/**/*.js
 /test/sources/proto/**/*.js
+/package-lock.json
