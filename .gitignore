@@ -12,8 +12,5 @@
 node_modules
 npm-debug.log
 coverage
-dist
-lib
-/proto/**/*.js
 /test/sources/proto/**/*.js
 /package-lock.json
