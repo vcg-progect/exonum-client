@@ -1,5 +1,5 @@
 {
-  "name": "exonum-client",
+  "name": "exonum-client-custom",
   "version": "0.16.9",
   "description": "Light Client for Exonum Blockchain",
   "main": "./lib/index.js",
